@@ -1,0 +1,23 @@
+#include <iostream>
+
+using namespace std;
+int jumps(int n,int k)
+{
+    if(n==1)
+        return 1;
+        int ways = 0;
+        for(int i=1;i<=k;i++)
+        {
+            if(n-i>0)
+            ways+=jumps(n-i,k);
+        }
+        return ways;
+}
+int main()
+{
+    int n=4,k=2;
+    cout<<jumps(n,k);
+    
+
+    return 0;
+}
