@@ -41,9 +41,9 @@ void inOrder(node* root)
     // LNR
     if(root == NULL)
         return;
-    preOrder(root->left);
+    inOrder(root->left);
     cout<<root->data<<" ";
-    preOrder(root->right);
+    inOrder(root->right);
 }
 int main()
 {
