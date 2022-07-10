@@ -29,15 +29,28 @@ node* buildTree(){
 }
 void preOrder(node* root)
 {
+    // NLR
     if(root == NULL)
         return;
     cout<<root->data<<" ";
     preOrder(root->left);
     preOrder(root->right);
 }
+void inOrder(node* root)
+{
+    // LNR
+    if(root == NULL)
+        return;
+    preOrder(root->left);
+    cout<<root->data<<" ";
+    preOrder(root->right);
+}
 int main()
 {
     node* root = NULL;
     root = buildTree();
+    cout<<endl<<"Printing preOrder "<<endl;
     preOrder(root);
+    cout<<endl<<"Printing inOrder "<<endl;
+    inOrder(root);
 }
