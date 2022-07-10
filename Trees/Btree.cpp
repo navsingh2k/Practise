@@ -57,7 +57,10 @@ void postOrder(node* root)
 int main()
 {
     node* root = NULL;
+
+    // build tree 10 5 3 -1 -1 7 6 -1 -1 -1 11 -1 -1
     root = buildTree();
+
     cout<<endl<<"Printing preOrder "<<endl;
     preOrder(root);
     cout<<endl<<"Printing inOrder "<<endl;
