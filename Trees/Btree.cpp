@@ -77,6 +77,38 @@ void levelOrder(node* root)
         }
     }
 }
+void levelOrderS(node* root)
+{
+    int count =0;
+    if(root == NULL)
+        return;
+    queue<node*> q;
+    q.push(root);
+    q.push(NULL);
+    while(q.size()>1)
+    {
+       node* front = q.front();
+       q.pop();
+       if(front == NULL)
+       {
+        q.push(NULL);
+        cout<<endl;
+        count++;
+       }
+       else{
+         if(front->left!=NULL)
+        {
+            q.push(front->left);
+        }
+        if(front->right!=NULL)
+        {
+            q.push(front->right);
+        }
+        cout<<front->data<<" ";
+       }
+    }
+    cout<<" h is "<<count;
+}
 int main()
 {
     node* root = NULL;
@@ -98,5 +130,5 @@ int main()
     cout<<endl<<"Printing postOrder "<<endl;
     postOrder(root);
     cout<<endl<<"Printing levelOrder "<<endl;
-    levelOrder(root);
+    levelOrderS(root);
 }
