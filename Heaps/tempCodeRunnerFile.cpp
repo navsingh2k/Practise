@@ -1,0 +1,2 @@
+ maxHeap.deletion();
+    maxHeap.print();
