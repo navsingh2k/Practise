@@ -6,9 +6,9 @@ void heapify(int arr[], int size, int i)
     int largest = i;
     int left = (2 * i) + 1;
     int right = (2 * i) + 2;
-    if (left < size && arr[largest] > arr[left])
+    if (left < size && arr[largest] < arr[left])
         largest = left;
-    if (right < size && arr[largest] > arr[right])
+    if (right < size && arr[largest] < arr[right])
         largest = right;
     if (largest != i)
     {
@@ -36,7 +36,7 @@ void printHeap(int arr[], int size)
 }
 int main()
 {
-    int arr[] = {12,15,11,9,8,7};
+    int arr[] = {11,9,8,7};
     int size = sizeof(arr) / sizeof(arr[0]);
     buildHeap(arr, size);
     printHeap(arr, size);
